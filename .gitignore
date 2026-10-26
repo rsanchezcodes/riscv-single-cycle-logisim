@@ -13,5 +13,5 @@ desktop.ini
 *.jar
 *.zip
 
-# Course library: pending lecturer's permission
+# Course component library: not redistributed (authorship not confirmed)
 circuits/RISCVlib.circ

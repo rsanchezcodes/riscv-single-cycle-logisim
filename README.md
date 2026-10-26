@@ -4,7 +4,7 @@ A single-cycle processor for a subset of the RISC-V RV32I instruction set, built
 
 ## Context and authorship
 
-This was a guided lab assignment that every first-year student in the course completed. The course provided the building blocks in the `RISCVlib.circ` library: ALU, register file, instruction and data memories, immediate extender, ALU control, program counter and clock generator (`ClockGen`).
+This was a guided lab assignment that every first-year student in the course completed. The course provided the building blocks in a Logisim component library (`RISCVlib.circ`, not included in this repository): ALU, register file, instruction and data memories, immediate extender, ALU control, program counter and clock generator (`ClockGen`).
 
 My work:
 
@@ -45,7 +45,7 @@ docs/       Control unit design and screenshots
 ## How to run
 
 1. Requirements: Java and the **Logisim 2.7.1 build with the DAC patch** (`logisim-generic-2.7.1-dac1.2.5.RV`), which the course distributes. It is not included here. The circuit uses features of this build, such as memories that load `instmem.txt` and `datamem.txt` on reset. It has not been tested in standard Logisim or Logisim-evolution.
-2. Open `circuits/VeryHardWareRISCV.circ`. Keep `RISCVlib.circ`, `instmem.txt` and `datamem.txt` in the same folder: the processor loads the library by relative path, and the memories load the two text files.
+2. Place `RISCVlib.circ`, the component library distributed in the course, in `circuits/` next to `instmem.txt` and `datamem.txt`. Then open `circuits/VeryHardWareRISCV.circ`. The processor loads the library by relative path, and the memories load the two text files.
 3. To run a different program, copy its `instmem.txt` and `datamem.txt` into `circuits/`. Then use *Simulate → Reset Simulation* to reload the memories.
 4. Enable *Simulate → Ticks Enabled*. The processor runs until it reaches `halt`. Each clock cycle lasts 16 ticks (8 high and 8 low), long enough to cover the delays the course library models for the memories, ALU and register file.
 
@@ -68,4 +68,4 @@ I simulated the following programs and checked the data memory after `halt`:
 
 ## License
 
-The processor circuit (`VeryHardWareRISCV.circ`) and the test program are my own work. `RISCVlib.circ` was written by the course staff and is included **[PENDING: only with the lecturer's permission; otherwise remove it and replace this sentence with: "`RISCVlib.circ` belongs to the course staff and is not redistributed here; the processor needs it in `circuits/` to open."]**
+The processor circuit (`VeryHardWareRISCV.circ`) and the test program are my own work. The component library `RISCVlib.circ` was provided in the course and is not redistributed here, because its original authorship could not be confirmed. The processor needs it in `circuits/` to open.
