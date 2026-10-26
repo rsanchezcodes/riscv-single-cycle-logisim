@@ -1,0 +1,17 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logisim / editor backups
+*.circ.bak
+*~
+*.swp
+
+# Course material that must not be published
+*.pdf
+*.jar
+*.zip
+
+# Course library: pending lecturer's permission
+circuits/RISCVlib.circ
