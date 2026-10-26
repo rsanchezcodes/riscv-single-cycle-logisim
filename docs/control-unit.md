@@ -10,11 +10,14 @@ The control unit is a **ROM with 128 words of 12 bits, addressed directly by the
 - Supporting a new opcode means writing one more ROM word, plus whatever datapath changes the instruction needs.
 - Opcodes that are not used read as `0x000`, which disables register and memory writes, so an unknown instruction has no effect on the processor state.
 
-**[PENDING: one sentence on what the lab guide or slides suggested for the control unit (e.g. gate-level decoding per signal), so the difference is explicit.]**
-
-**[PENDING: why you chose this approach, in your own words.]**
-
 `op5` is not stored in the ROM. It is bit 5 of the opcode, passed directly to the course-provided ALU control, which requires it to tell R-type from I-type.
+
+### Why a ROM
+
+I chose this design for two reasons, compared with a direct gate-level implementation of each control signal:
+
+- **Simplicity:** the whole control unit reduces to a ROM, a splitter and an inverter, instead of separate decoding logic for every signal.
+- **Extensibility:** supporting a new instruction means writing one more ROM word rather than redesigning the decoding logic, which suits a processor meant to grow with more instructions.
 
 ### Branch resolution
 
